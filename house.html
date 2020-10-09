@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="./CSS/style.css">
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <header>
+                <div  class="d-flex">
+                     <div class="p-2"><img src="./imagenes/img_TGIF.png" alt="tgif logo"></div>
+                     <div class="ml-auto m-5" ><img src="./imagenes/correo.png" class="correo"><a  href="mailto:info@tgif.net">info@tgif.net</a></div>
+                </div>
+                <div class="menu">
+                    <nav class="navbar navbar-expand-lg border border-dark bg-light">            
+                          <ul class="nav">
+                          <li class="nav-item">
+                              <a class="nav-link active" href="index.html">Home</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Congres 113</a>
+                              <div class="dropdown-menu">
+                                  <a class="dropdown-item" href="house.html">House</a>
+                                  <a class="dropdown-item" href="senate.html">Senate</a>
+                                </div>
+                          </li>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Attendance</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="house-attendace.html">House</a>
+                                <a class="dropdown-item" href="senate-attendance.html">Senate</a>
+                              </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Party loyalty</a>
+                          <div class="dropdown-menu">
+                              <a class="dropdown-item" href="house-pl.html">House</a>
+                              <a class="dropdown-item" href="senate-pl.html">Senate</a>
+                            </div>
+                      </li>
+                      </ul>    
+                    </nav>
+                </div>
+             </header>
+        </div>
+        <div id="app">
+        <div class="text">
+            <h2 id="house_c">Congressmen</h2>
+            <p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
+            <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
+        </div>
+        <div class="caja2">
+            <table id="tabla_basica" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Members</th>
+                        <th scope="col">Party</th>
+                        <th scope="col">state</th>
+                        <th scope="col">years in office</th>
+                        <th scope="col">% votes w/party</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpo_tabla">
+                    <tr v-for="miembro in lista_miembros">
+                        <td><a v-bind:href="miembro.url">{{miembro.first_name}} {{miembro.last_name}}</a></td>
+                        <td>{{miembro.party}}</td>
+                        <td>{{miembro.state}}</td>
+                        <td>{{miembro.seniority}}</td>
+                        <td>{{miembro.votes_with_party_pct}}</td>
+                </tbody>
+            </table>
+        </div>
+        <footer>
+          <div class="border border-dark bg-light py-3 bg-success">©2016 TGIF| All rights reserved</div>
+        </footer>
+        </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="./JS/estadisticas.js"></script>
+    </body>
+
+</html>

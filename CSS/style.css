@@ -1,0 +1,38 @@
+body{
+    margin: 5vh;
+}
+div.text{
+    margin: 2vw 40vw 5vw 2vw;
+}
+div.caja2{
+    margin: 0vh 1vw;
+}
+.home{
+    width: 55%;
+    margin:5vh 0vh
+}
+
+footer div {
+    text-align: center;
+}
+menu {
+    border: 1px;
+}
+
+[aria-expanded="false"] > .expanded,
+[aria-expanded="true"] > .collapsed {
+  display: none;
+}
+div#imagen{
+    position: absolute;
+    top:65%;
+    right: 19%;
+}
+[aria-expanded="false"] > .expanded,
+[aria-expanded="true"] > .collapsed {
+  display: none;
+}
+
+th, td{
+    text-align: center;
+}
